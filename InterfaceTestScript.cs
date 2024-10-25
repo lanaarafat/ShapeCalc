@@ -10,23 +10,17 @@ public class InterfaceTestScript : MonoBehaviour
         IShape trapezium = new Trapezium();
         trapezium.CalculateArea();
         trapezium.CalculatePerimeter();
-        trapezium.CalculateUnkownSides();
+        ((Trapezium)trapezium).CalculateUnkownSides();
 
         IShape circle = new Circle();
         circle.CalculateArea();
         circle.CalculatePerimeter();
-        circle.CalculateRadius();
+        ((Circle)circle).CalculateRadius();
 
         IShape nonagon = new Nonagon();
         nonagon.CalculateArea();
         nonagon.CalculatePerimeter();
-        nonagon.CalculateNumberOfSides();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ((Nonagon)nonagon).CalculateNumberOfSides();
     }
 }
 
@@ -119,6 +113,7 @@ public class Nonagon : IShape
 
     public int CalculateNumberOfSides()
     {
+        Debug.Log("Number of sides in Nonagon: " + numberOfSides)
         return numberOfSides;
     }
 }
